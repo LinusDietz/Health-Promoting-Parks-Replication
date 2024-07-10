@@ -1,0 +1,6 @@
+clint
+osmium
+geopandas
+couchdb
+shapely
+haversine

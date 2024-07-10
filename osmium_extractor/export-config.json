@@ -1,0 +1,19 @@
+{
+    "attributes": {
+        "type":      true,
+        "id":        true,
+        "version":   false,
+        "changeset": false,
+        "timestamp": false,
+        "uid":       false,
+        "user":      false,
+        "way_nodes": true
+    },
+    "format_options": {
+    },
+    "type": ["way","relation"],
+    "linear_tags":  false,
+    "area_tags":    true,
+    "exclude_tags": [],
+    "include_tags": ["leisure=park"]
+}
