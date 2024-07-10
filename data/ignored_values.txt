@@ -1,0 +1,11 @@
+Bing
+bing
+no
+none
+ok
+permissive
+private
+survey
+unclassified
+unknown
+yes

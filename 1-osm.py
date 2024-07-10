@@ -10,10 +10,6 @@ from osmium_extractor.osmium_handlers import CollectorHandler
 
 wkbfab = osmium.geom.WKBFactory()
 
-## Usage:
-# python3 osm.py --couchdb http://USERNAME:PASSWORD@127.0.0.1:5984 --city london --osm_id 175342 --region england
-# python3 osm.py --couchdb http://USERNAME:PASSWORD@127.0.0.1:5984 --city tokyo --osm_id 1803923 --region japan --radius 20 --lat 35.680204708358 --lon 139.768273980714
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--couchdb')
 parser.add_argument('--city')
@@ -56,7 +52,7 @@ for i, park in enumerate(filter(lambda p: p.name, CITY.get_parks()), 1):
     except Exception as e:
         print(f"{park.osm_id}: {e}\n")
         continue
-
+    print(f"{i} :: Processing {park.name}")
     boundary = f"osmium_extractor/parks_geojson/{park.osm_id}.geojson"
     output_file_name = f"osmium_extractor/parks_geojson/{park.osm_id}_elements.pbf"
 
