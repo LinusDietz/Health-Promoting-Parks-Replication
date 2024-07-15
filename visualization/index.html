@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+        }
+
+        div {
+            padding: 0;
+            border: 0 solid #000000;
+        }
+
+        .select-label {
+            font-size: 100%;
+            font-weight: bold;
+        }
+
+        .txt4 {
+            font-size: 100%;
+            font-weight: bold;
+            margin-top: 2px;
+            margin-left: 0;
+            color: #000000;
+            border: 2px solid #ff9934;
+        }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Examining Inequality in Park Quality for Promoting Health</title>
+</head>
+<body>
+<script>
+    let selectedCity, embeddedMap, selectedActivity;
+
+    $(document).ready(function () {
+        selectedCity = document.getElementById('city');
+        selectedActivity = document.getElementById('activity');
+        embeddedMap = document.getElementById('mapFrame');
+        embeddedMap.src = selectedCity.options[0].value + "_" + selectedActivity.options[0].value + ".html";
+    });
+
+    function setCityMap() {
+        let mapUrl;
+
+        if (selectedCity.selectedIndex > 0) {
+            mapUrl = selectedCity.options[selectedCity.selectedIndex].value + '_' + selectedActivity.value + ".html";
+        } else {
+            mapUrl = selectedCity.options[0].value + '_' + selectedActivity.value + ".html";
+        }
+        embeddedMap.src = mapUrl;
+    }
+</script>
+
+<h1>Examining Inequality in Park Quality for Promoting Health</h1>
+
+<form id="controls" method="post">
+    <label class="select-label"> Select a city:
+        <select class="txt4" id="city" onchange="setCityMap()">
+            <option value="city_maps/amsterdam">Amsterdam</option>
+            <option value="city_maps/auckland">Auckland</option>
+            <option value="city_maps/berlin">Berlin</option>
+            <option value="city_maps/boston">Boston</option>
+            <option value="city_maps/buenos_aires">Buenos Aires</option>
+            <option value="city_maps/chicago">Chicago</option>
+            <option value="city_maps/christchurch">Christchurch</option>
+            <option value="city_maps/copenhagen">Copenhagen</option>
+            <option value="city_maps/hong_kong">Hong Kong</option>
+            <option value="city_maps/houston">Houston</option>
+            <option value="city_maps/london">London</option>
+            <option value="city_maps/madrid">Madrid</option>
+            <option value="city_maps/melbourne">Melbourne</option>
+            <option value="city_maps/montreal">Montreal</option>
+            <option value="city_maps/moscow">Moscow</option>
+            <option value="city_maps/new_york">New York</option>
+            <option value="city_maps/paris">Paris</option>
+            <option value="city_maps/perth">Perth</option>
+            <option value="city_maps/philadelphia">Philadelphia</option>
+            <option value="city_maps/rio_de_janeiro">Rio de Janeiro</option>
+            <option value="city_maps/rome">Rome</option>
+            <option value="city_maps/san_diego">San Diego</option>
+            <option value="city_maps/san_francisco">San Francisco</option>
+            <option value="city_maps/seattle">Seattle</option>
+            <option value="city_maps/seoul">Seoul</option>
+            <option value="city_maps/singapore">Singapore</option>
+            <option value="city_maps/st_petersburg">St Petersburg</option>
+            <option value="city_maps/stockholm">Stockholm</option>
+            <option value="city_maps/sydney">Sydney</option>
+            <option value="city_maps/taipeh">Taipeh</option>
+            <option value="city_maps/tokyo">Tokyo</option>
+            <option value="city_maps/toronto">Toronto</option>
+            <option value="city_maps/vancouver">Vancouver</option>
+            <option value="city_maps/vienna">Vienna</option>
+            <option value="city_maps/washington_dc">Washington DC</option>
+        </select>
+    </label>
+
+    <label class="select-label"> Select an activity category:
+        <select class="txt4" id="activity" onchange="setCityMap()">
+            <option value="physical">Physical</option>
+            <option value="nature">Nature-appreciation</option>
+            <option value="environmental">Environmental</option>
+            <option value="social">Social</option>
+            <option value="cultural">Cultural</option>
+        </select>
+    </label>
+</form>
+
+
+<iframe id="mapFrame" src="city_maps/amsterdam_physical.html" width="100%" height="80%" allowfullscreen></iframe>
+
+<p>Scores close to zero (colored in white) means a park has average offerings for the activities.
+    If a park has a positive score, its offerings for doing health-promoting activities is better than average.
+    A negative score (colored in grey to black), on the other hand, means the park is lacking in facilities for this activity.
+    It's important to note that each city's scores are adjusted relative that city. The scores don't allow for a comparison between parks in different cities.</p>
+</body>
+
+</html>

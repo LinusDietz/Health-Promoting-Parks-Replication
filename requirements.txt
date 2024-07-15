@@ -1,0 +1,9 @@
+clint
+osmium
+geopandas
+couchdb
+shapely
+haversine
+pandas
+requests
+tqdm
