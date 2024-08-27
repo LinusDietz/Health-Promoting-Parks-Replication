@@ -1,5 +1,4 @@
-# Replication Pack - Examining Inequality in Park Quality for Promoting Health Across 35 Global Cities
-
+# Replication Pack - Assessing the Health Potential of Parks in 35 Cities Worldwide
 ## Data
 
 * `lexicon.csv` The lexicon of OSM tags and the corresponding health-promoting activity category.
